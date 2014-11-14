@@ -17,8 +17,9 @@ public:
 	Point* add(Point* p1);
 	Point* scalarMult(double scalar);
 	Point* subtract(Point* p1);
-
-	// equals, hashCode, and toString 
+	bool operator==(const Point& other) const;
+	
+	// hashCode and toString
 
 
 private:

@@ -56,4 +56,11 @@ Point* Point::subtract(Point* p1)
 	return new Point(this->getDimension(), coordinates);
 }
 
-// Equals, HashCode, and toString()  
+bool Point::operator==(const Point& other) const {
+    if(this->getDimension() != other->getDimension()) return false;
+    for(int i = 0; i < this->getDimension(); i++) {
+        if(this->getCoordinates()->[i] != other->getCoordinates->[i]) return false;
+    }
+    return true;
+}
+// HashCode and toString()  

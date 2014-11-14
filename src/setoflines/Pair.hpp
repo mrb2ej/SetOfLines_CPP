@@ -1,4 +1,5 @@
-#include <vector>
+#ifndef PAIR_H
+#define PAIR_H
 
 using namespace std;
 
@@ -21,3 +22,5 @@ private:
 	
 
 };
+
+#endif

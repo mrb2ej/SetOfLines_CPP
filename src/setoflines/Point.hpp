@@ -1,3 +1,6 @@
+#ifndef POINT_H
+#define POINT_H
+
 #include <vector>
 
 using namespace std;
@@ -23,3 +26,5 @@ private:
 	vector<double> coordinates;
 
 };
+
+#endif

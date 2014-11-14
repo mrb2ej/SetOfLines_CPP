@@ -2,24 +2,24 @@
 
 using namespace std;
 
-class Pair 
+class Point
 {
 
-public: 
+public:
 	Point(int dimension, vector<double> position);
-	int getDimension()
+	int getDimension();
 	void setDimension(int dimension);
-    vector<double> getCoordinates();
-    void setCoordinates(vector<double> position);
-    Point* add(Point* p1);
-    Point* scalarMult(double scalar);
-    Point* subtract(Point* p1);
-	
+	vector<double> getCoordinates();
+	void setCoordinates(vector<double> position);
+	Point* add(Point* p1);
+	Point* scalarMult(double scalar);
+	Point* subtract(Point* p1);
+
 	// equals, hashCode, and toString 
-	
+
 
 private:
 	int dimension;
 	vector<double> coordinates;
-	
+
 };

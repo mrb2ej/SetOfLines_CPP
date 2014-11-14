@@ -10,12 +10,12 @@ Pair::Pair(Point* first, Point* second)
 	this->second = second;
 }
 
-Point* Pair::getFirst()
+Point* Pair::get_first()
 {
 	return this->first;
 }
 
-void Pair::setFirst(Point* first)
+void Pair::set_first(Point* first)
 {
 	if (first.getDimension() != this->second.getDimension()){
 		// throw new Exception("Point dimensions do not match!");
@@ -24,14 +24,13 @@ void Pair::setFirst(Point* first)
 	this->first = first;
 }
 
-Point* Pair::getSecond()
+Point* Pair::get_second()
 {
 	return this->second;
 }
 
-void Pair::setSecond(Point* second)
+void Pair::set_second(Point* second)
 {
-
 	if (this->first.getDimension() != second.getDimension()){
 		//throw new Exception("Point dimensions do not match!");
 	}

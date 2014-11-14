@@ -6,22 +6,22 @@ Point::Point(int dimension, vector<double>)
 	this->coordinates = new vector<double>(position);
 }
 
-int Point::getDimension()
+int Point::get_dimension()
 {
 	return this->dimension;
 }
 
-void Point::setDimension(int dimension)
+void Point::set_dimension(int dimension)
 {
 	this->dimension = dimension;
 }
 
-vector<double> Point::getCoordinates()
+vector<double> Point::get_coordinates()
 {
 	return this->coordinates;
 }
 
-void Point::setCoordinates(vector<double> position)
+void Point::set_coordinates(vector<double> position)
 {
 	this->coordinates = position;
 }
@@ -36,7 +36,7 @@ Point* Point::add(Point* p1)
 	return new Point(this->getDimension(), coordinates);
 }
 
-Point* Point::scalarMult(double scalar)
+Point* Point::scalar_mult(double scalar)
 {
 	vector<double> new_coordinates = new vector<double>();
 	for (double coordinate : this->coordinates) {

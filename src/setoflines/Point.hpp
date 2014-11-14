@@ -10,12 +10,12 @@ class Point
 
 public:
 	Point(int dimension, vector<double> position);
-	int getDimension();
-	void setDimension(int dimension);
-	vector<double> getCoordinates();
-	void setCoordinates(vector<double> position);
+	int get_dimension();
+	void set_dimension(int dimension);
+	vector<double> get_coordinates();
+	void set_coordinates(vector<double> position);
 	Point* add(Point* p1);
-	Point* scalarMult(double scalar);
+	Point* scalar_mult(double scalar);
 	Point* subtract(Point* p1);
 	bool operator==(const Point& other) const;
 	

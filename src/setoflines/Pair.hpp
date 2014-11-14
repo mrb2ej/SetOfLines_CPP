@@ -11,10 +11,10 @@ public:
 	Point* second;
 
 	Pair(Point* first, Point* second);
-	Point* getFirst();
-	void setFirst(Point* first);
-	Point* getSecond();
-	void setSecond(Point* second);
+	Point* get_first();
+	void set_first(Point* first);
+	Point* get_second();
+	void set_second(Point* second);
 	
 	// equals, hashCode
 	

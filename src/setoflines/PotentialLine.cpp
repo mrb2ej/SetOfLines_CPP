@@ -14,7 +14,7 @@ int PotentialLine::get_num_unused_points()
 	return this->num_unused_points;
 }
 
-Bucket* PotentialLine::get_bucket();
+Bucket* PotentialLine::get_bucket()
 {
 	return this->bucket;
 }

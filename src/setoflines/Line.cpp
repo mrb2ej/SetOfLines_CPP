@@ -5,24 +5,24 @@ Line::Line(Point* initial_point, Point* second_point)
 	this->initial_point = initial_point;
 	this->second_point = second_point;
 
-	this->all_points = new vector<Point*>();
+	//this->all_points = new vector<Point*>();
 }
 
 Line::Line(Line* line)
 {
 	this->initial_point = line->get_initial_point();
 	this->second_point = line->get_second_point();
-	this->all_points = new vector<Point*>(line->get_all_points());
+	//this->all_points = new vector<Point*>(line->get_all_points());
 	this->num_points = line->get_num_points();
 }
 
 void Line::add_point(Point* point, bool direction)
 {
-	if (this->direction == RIGHT){
-		all_points.add(point);
+	if (direction == RIGHT){
+		this->all_points.push_back(point);
 	}
 	else{
-		all_points.add(0, point);
+		this->all_points.insert(this->all_points.begin(), point);
 	}
 
 	this->num_points++;

@@ -1,9 +1,11 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include <vector>
-
 using namespace std;
+
+#include <vector>
+#include <cstddef>
+#include "Point.hpp"
 
 class Line
 {
@@ -22,8 +24,8 @@ public:
 
 
 private:	
-	final bool LEFT = false;
-	final bool RIGHT = true;
+	static bool const LEFT = false;   //final?
+	static bool const RIGHT = true;   // final?
 	
 	Point* initial_point;
 	Point* second_point;

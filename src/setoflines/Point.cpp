@@ -1,9 +1,9 @@
 #include "Point.hpp"
 
-Point::Point(int dimension, vector<double>)
+Point::Point(int dimension, vector<double> position)
 {
 	this->dimension = dimension;
-	this->coordinates = new vector<double>(position);
+	// this->coordinates = new vector<double>(position);
 }
 
 int Point::get_dimension()
@@ -28,19 +28,19 @@ void Point::set_coordinates(vector<double> position)
 
 Point* Point::add(Point* p1)
 {
-	vector<double> coordinates = new vector<double>();
-	for (int i = 0; i < this->getDimension(); i++) {
-		coordinates.push_back(this->getCoordinates()->at(i) + p1->getCoordinates()->at(i));
+	vector<double>* coordinates = new vector<double>;
+	for (int i = 0; i < this->get_dimension(); i++) {
+		coordinates->push_back(this->get_coordinates().at(i) + p1->get_coordinates().at(i));
 	}
 
-	return new Point(this->getDimension(), coordinates);
+	return new Point(this->get_dimension(), coordinates);
 }
 
 Point* Point::scalar_mult(double scalar)
 {
-	vector<double> new_coordinates = new vector<double>();
+	vector<double>* new_coordinates = new vector<double>;
 	for (double coordinate : this->coordinates) {
-		new_coordinates.push_back(coordinate * scalar);
+		new_coordinates->push_back(coordinate * scalar);
 	}
 
 	return new Point(this->dimension, new_coordinates);
@@ -48,19 +48,21 @@ Point* Point::scalar_mult(double scalar)
 
 Point* Point::subtract(Point* p1)
 {
-	vector<double> coordinates = new vector<double>();
-	for (int i = 0; i < this->getDimension(); i++) {
-		coordinates.push_back(this->getCoordinates()->at(i) - p1->getCoordinates()->at(i));
+	vector<double>* coordinates = new vector<double>;
+	for (int i = 0; i < this->get_dimension(); i++) {
+		coordinates->push_back(this->get_coordinates().at(i) - p1->get_coordinates().at(i));
 	}
 
-	return new Point(this->getDimension(), coordinates);
+	return new Point(this->get_dimension(), coordinates);
 }
 
 bool Point::operator==(const Point& other) const {
-    if(this->getDimension() != other->getDimension()) return false;
-    for(int i = 0; i < this->getDimension(); i++) {
-        if(this->getCoordinates()->[i] != other->getCoordinates->[i]) return false;
+	/*
+	if(this.get_dimension() != other.get_dimension()) return false;
+    for(int i = 0; i < this.get_dimension(); i++) {
+        if(this.get_coordinates().at(i) != other.get_coordinates.at(i)) return false;
     }
+	*/
     return true;
 }
 // HashCode and toString()  

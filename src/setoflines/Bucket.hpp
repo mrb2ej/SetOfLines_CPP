@@ -1,9 +1,13 @@
 #ifndef BUCKET_H
 #define BUCKET_H
 
-#include <unordered_set> 
-
 using namespace std;
+
+#include <unordered_set> 
+#include <cstddef>
+//#include "PotentialLine.hpp"
+
+class PotentialLine; //Foward Decleration
 
 class Bucket
 {
@@ -25,7 +29,7 @@ private:
 	int value;
 	Bucket* previous_bucket;
 	Bucket* next_bucket;
-	unordered_set<PotentialLine> potential_lines;
+	std::unordered_set<PotentialLine*> potential_lines;
 
 };
 

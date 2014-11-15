@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#include "Point.hpp"
+#include <cstddef>
+
 class Pair
 {
 

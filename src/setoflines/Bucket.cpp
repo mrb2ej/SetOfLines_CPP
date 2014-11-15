@@ -3,9 +3,9 @@
 Bucket::Bucket(int value)
 {
 	this->value = value;
-	this->previous_bucket = null;
-	this->next_bucket = null;
-	this->potential_lines = new unordered_set<PotentialLine>();
+	this->previous_bucket = NULL;
+	this->next_bucket = NULL;
+	this->potential_lines = new std::unordered_set<PotentialLine>();
 }
 
 void Bucket::set_previous_bucket(Bucket* b)

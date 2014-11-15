@@ -3,6 +3,12 @@
 
 using namespace std;
 
+#include "Line.hpp"
+#include <cstddef>
+//#include "Bucket.hpp"
+
+class Bucket;  // Foward Decleration 
+
 class PotentialLine
 {
 

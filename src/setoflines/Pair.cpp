@@ -2,7 +2,7 @@
 
 Pair::Pair(Point* first, Point* second)
 {
-	if (first.getDimension() != second.getDimension()){
+	if (first->get_dimension() != second->get_dimension()){
 		// throw new Exception("Point dimensions do not match!");
 	}
 
@@ -17,7 +17,7 @@ Point* Pair::get_first()
 
 void Pair::set_first(Point* first)
 {
-	if (first.getDimension() != this->second.getDimension()){
+	if (first->get_dimension() != this->second->get_dimension()){
 		// throw new Exception("Point dimensions do not match!");
 	}
 
@@ -31,7 +31,7 @@ Point* Pair::get_second()
 
 void Pair::set_second(Point* second)
 {
-	if (this->first.getDimension() != second.getDimension()){
+	if (this->first->get_dimension() != second->get_dimension()){
 		//throw new Exception("Point dimensions do not match!");
 	}
 

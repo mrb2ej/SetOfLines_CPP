@@ -31,7 +31,7 @@ private:
 	double epsilon;
 	int dimension;
 
-	unordered_set<Pair*> unmarked_pairs = new unordered_set<Pair*>();
+	unordered_set<Pair*, hash_pair, equals_pair> unmarked_pairs;
 	vector<Line*> maximal_lines = new vector<Line*>();
 	vector<Line*> set_of_lines = new vector<Line*>();
 
@@ -46,7 +46,12 @@ private:
 		Bucket* front_bucket);
 	Bucket* generate_list_of_buckets(vector<PotentialLine*> potential_lines);
 	Line* select_line(Bucket* front_bucket);
-	unordered_set<Point*, vector<PotentialLine*>> populate_unused_points(vector<Point*> point_set, vector<PotentialLine*> potential_lines);
+
+	
+	// I think this needs to be a map insetad of a set
+	//unordered_set<Point*, vector<PotentialLine*>> populate_unused_points(vector<Point*> point_set, vector<PotentialLine*> potential_lines);
+	
+
 	void generate_maximal_lines();
 	// TODO: void populate_tree(KDTree kdtree, vector<Point*> point_set);
 	void generate_pairs(vector<Point*> point_set);

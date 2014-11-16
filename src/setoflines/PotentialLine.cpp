@@ -18,3 +18,4 @@ Bucket* PotentialLine::get_bucket()
 {
 	return this->bucket;
 }
+

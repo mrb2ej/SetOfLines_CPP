@@ -37,3 +37,4 @@ void Pair::set_second(Point* second)
 
 	this->second = second;
 }
+

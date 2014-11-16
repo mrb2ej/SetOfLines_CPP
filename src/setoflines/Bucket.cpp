@@ -5,7 +5,6 @@ Bucket::Bucket(int value)
 	this->value = value;
 	this->previous_bucket = NULL;
 	this->next_bucket = NULL;
-	this->potential_lines = new std::unordered_set<PotentialLine>();
 }
 
 void Bucket::set_previous_bucket(Bucket* b)
@@ -35,20 +34,21 @@ int Bucket::get_value()
 
 void Bucket::add_line(PotentialLine* p1)
 {
-	this->potential_lines->insert(p1);
+	this->potential_lines.insert(p1);
 }
 
 void Bucket::remove_line(PotentialLine* p1)
 {
-	this->potential_lines->erase(p1);
+	this->potential_lines.erase(p1);
 }
 
 PotentialLine* Bucket::get_potential_line()
 {
-	// TODO: return this->potential_lines->iterator()->next();
+	// TODO: return this->potential_lines.iterator()->next();
+	return NULL;
 }
 
 bool Bucket::empty()
 {
-	return this->potential_lines->empty();
+	return this->potential_lines.empty();
 }

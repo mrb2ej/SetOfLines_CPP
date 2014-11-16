@@ -5,9 +5,9 @@ using namespace std;
 
 #include <unordered_set> 
 #include <cstddef>
-//#include "PotentialLine.hpp"
+#include "PotentialLine.hpp"
 
-class PotentialLine; //Foward Decleration
+//class PotentialLine; //Foward Decleration
 
 class Bucket
 {
@@ -21,7 +21,7 @@ public:
 	int get_value();
 	void add_line(PotentialLine* p1);
 	void remove_line(PotentialLine* p1);
-	PotentialLine* get_potentialLine();
+	PotentialLine* get_potential_line();
 	bool empty();
 
 
@@ -29,7 +29,7 @@ private:
 	int value;
 	Bucket* previous_bucket;
 	Bucket* next_bucket;
-	std::unordered_set<PotentialLine*> potential_lines;
+	std::unordered_set<PotentialLine*, hash_potential_line, equals_potential_line> potential_lines;
 
 };
 

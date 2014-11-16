@@ -10,7 +10,7 @@ class Point
 {
 
 public:
-	Point(int dimension, vector<double> position);
+	Point(int dimension, vector<double>* position);
 	int get_dimension();
 	void set_dimension(int dimension);
 	vector<double> get_coordinates();
@@ -19,7 +19,6 @@ public:
 	Point* scalar_mult(double scalar);
 	Point* subtract(Point* p1);
 	bool operator==(const Point& other) const;
-	
 	// hashCode and toString
 
 
@@ -27,6 +26,18 @@ private:
 	int dimension;
 	vector<double> coordinates;
 
+};
+
+struct hash_point {
+        size_t operator()(const Point* p) const {
+                return 0;
+        }
+};
+
+struct equals_point {
+        bool operator()(const Point* p1, const Point* p2) const {
+                return *(p1) == *(p2);
+        }
 };
 
 #endif

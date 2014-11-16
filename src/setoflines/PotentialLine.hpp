@@ -25,4 +25,16 @@ private:
 
 };
 
+struct hash_potential_line {
+	size_t operator()(const PotentialLine* pl) const {
+		return 0;
+	}
+};
+
+struct equals_potential_line {
+	bool operator()(const PotentialLine* pl1, const PotentialLine* pl2) const {
+		return pl1 == pl2;
+	}
+};
+
 #endif

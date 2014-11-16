@@ -26,4 +26,18 @@ private:
 
 };
 
+struct hash_pair {
+        size_t operator()(const Pair* p) const {
+                return 0;
+        }
+};
+
+struct equals_pair {
+        bool operator()(const Pair* p1, const Pair* p2) const {
+                if((*(p1->first) == *(p2->first)) && (*(p1->second) == *(p2->second))) return true;
+		if((*(p1->first) == *(p2->second)) && (*(p1->second) == *(p2->first))) return true;
+		return false;
+        }
+};
+
 #endif

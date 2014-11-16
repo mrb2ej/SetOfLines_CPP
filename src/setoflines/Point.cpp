@@ -1,6 +1,6 @@
 #include "Point.hpp"
 
-Point::Point(int dimension, vector<double> position)
+Point::Point(int dimension, vector<double>* position)
 {
 	this->dimension = dimension;
 	// this->coordinates = new vector<double>(position);

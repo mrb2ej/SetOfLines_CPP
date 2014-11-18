@@ -8,6 +8,7 @@
 #include "Line.hpp"
 #include "PotentialLine.hpp"
 #include "Bucket.hpp"
+#include "lp_lib.h"
 
 
 using namespace std;

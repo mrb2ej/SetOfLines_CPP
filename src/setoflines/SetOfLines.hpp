@@ -20,20 +20,19 @@ public:
 	vector<Line*> get_set_of_lines();
 	double get_epsilon();
 
-
 private:
 	//==========================
 	// Fields
 	//==========================
-	final bool LEFT = false;
-	final bool RIGHT = true;
+	const static bool LEFT = false;
+	const static bool RIGHT = true;
 
 	double epsilon;
 	int dimension;
 
 	unordered_set<Pair*, hash_pair, equals_pair> unmarked_pairs;
-	vector<Line*> maximal_lines = new vector<Line*>();
-	vector<Line*> set_of_lines = new vector<Line*>();
+	vector<Line*> maximal_lines;
+	vector<Line*> set_of_lines;
 
 	// TODO: KDTree kdtree;
 
@@ -67,9 +66,9 @@ private:
 	Point* get_next_point(Point* next_point_guess);
 	Point* get_next_point_guess(Line* working_set, bool direction);
 	Pair* closest_pair(vector<Point*> point_set);
-	Pair* closest_pair_helper(vector<vector<Point*>> sorted_points);
+	Pair* closest_pair_helper(vector<vector<Point*> > sorted_points);
 	Pair* brute_force_closest_pair(vector<Point*> point_set);
-	vector<Point*> sort_points_by_dimension(vector<Point*> point_set, final int dim);
+	vector<Point*> sort_points_by_dimension(vector<Point*> point_set, const int dim);
 	double chebyshev_distance(Pair* p);
 	double chebyshev_distance(Point* p1, Point* p2);
 	double dynamically_select_epsilon(vector<Point*> point_set);

@@ -58,8 +58,8 @@ int Line::get_num_points()
 	return this->num_points;
 }
 
-void Line::set_num_points()
+void Line::set_num_points(int num)
 {
-	this->num_points = num_points;
+	this->num_points = num;
 }
 // compareTo, toString

@@ -19,7 +19,7 @@ public:
 	Point* get_second_point();
 	void set_second_point(Point* second_point);
 	int get_num_points();
-	void set_num_points();
+	void set_num_points(int num);
 	// compareTo, toString
 
 

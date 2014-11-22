@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall 
+CFLAGS=-c -Wall -I../lp_solve
 
 all: setoflines
 

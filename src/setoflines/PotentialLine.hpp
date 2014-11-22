@@ -17,6 +17,7 @@ public:
 	Line* get_line();
 	int get_num_unused_points();
 	Bucket* get_bucket();
+	size_t hash() const;
 
 private:
 	Line* line;
@@ -27,7 +28,7 @@ private:
 
 struct hash_potential_line {
 	size_t operator()(const PotentialLine* pl) const {
-		return 0;
+		return pl->hash();
 	}
 };
 

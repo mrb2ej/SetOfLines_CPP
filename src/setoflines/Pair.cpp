@@ -10,7 +10,7 @@ Pair::Pair(Point* first, Point* second)
 	this->second = second;
 }
 
-Point* Pair::get_first()
+Point* Pair::get_first() const
 {
 	return this->first;
 }
@@ -24,7 +24,7 @@ void Pair::set_first(Point* first)
 	this->first = first;
 }
 
-Point* Pair::get_second()
+Point* Pair::get_second() const
 {
 	return this->second;
 }
@@ -38,3 +38,7 @@ void Pair::set_second(Point* second)
 	this->second = second;
 }
 
+size_t Pair::hash() const
+{
+	return this->get_first()->hash() ^ this->get_second()->hash();
+}

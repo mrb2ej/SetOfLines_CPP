@@ -19,3 +19,7 @@ Bucket* PotentialLine::get_bucket()
 	return this->bucket;
 }
 
+size_t PotentialLine::hash() const
+{
+	return this->line->get_initial_point()->hash() ^ this->line->get_second_point()->hash();
+}

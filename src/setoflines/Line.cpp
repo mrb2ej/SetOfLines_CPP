@@ -33,7 +33,7 @@ vector<Point*> Line::get_all_points()
 	return this->all_points;
 }
 
-Point* Line::get_initial_point()
+Point* Line::get_initial_point() const
 {
 	return this->initial_point;
 }
@@ -43,7 +43,7 @@ void Line::set_initial_point(Point* initial_point)
 	this->initial_point = initial_point;
 }
 
-Point* Line::get_second_point()
+Point* Line::get_second_point() const
 {
 	return this->second_point;
 }

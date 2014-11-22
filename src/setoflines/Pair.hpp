@@ -14,11 +14,11 @@ public:
 	Point* second;
 
 	Pair(Point* first, Point* second);
-	Point* get_first();
+	Point* get_first() const;
 	void set_first(Point* first);
-	Point* get_second();
+	Point* get_second() const;
 	void set_second(Point* second);
-	
+	size_t hash() const;
 	// equals, hashCode
 	
 private:
@@ -28,7 +28,7 @@ private:
 
 struct hash_pair {
         size_t operator()(const Pair* p) const {
-                return 0;
+                return p->hash();
         }
 };
 

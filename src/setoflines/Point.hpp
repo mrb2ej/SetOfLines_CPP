@@ -13,8 +13,8 @@ public:
 	Point(int dimension, vector<double>* position);
 	int get_dimension() const;
 	void set_dimension(int dimension);
-	vector<double> get_coordinates() const;
-	void set_coordinates(vector<double> position);
+	vector<double>* get_coordinates() const;
+	void set_coordinates(vector<double>* position);
 	Point* add(Point* p1);
 	Point* scalar_mult(double scalar);
 	Point* subtract(Point* p1);
@@ -25,7 +25,7 @@ public:
 
 private:
 	int dimension;
-	vector<double> coordinates;
+	vector<double>* coordinates;
 
 };
 

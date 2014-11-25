@@ -1,0 +1,10 @@
+CC=g++
+CFLAGS=-c -Wall 
+
+all: testframework
+
+testframework:  
+	$(CC) $(CFLAGS) src/testframework/Bucket_unittest.cpp src/testframework/Line_unittest.cpp src/testframework/Pair_unittest.cpp src/testframework/Point_unittest.cpp src/testframework/PotentialLine_unittest.cpp 
+
+clean:
+	rm -rf *.o testframework

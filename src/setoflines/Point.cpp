@@ -3,7 +3,11 @@
 Point::Point(int dimension, vector<double>* position)
 {
 	this->dimension = dimension;
-	// this->coordinates = new vector<double>(position);
+	this->coordinates = new vector<double>();
+
+	for (int i = 0; i < position->size; i++){
+		coordinates[i] = position.at(i);
+	}
 }
 
 int Point::get_dimension() const
@@ -16,14 +20,18 @@ void Point::set_dimension(int dimension)
 	this->dimension = dimension;
 }
 
-vector<double> Point::get_coordinates() const
+vector<double>* Point::get_coordinates() const
 {
 	return this->coordinates;
 }
 
-void Point::set_coordinates(vector<double> position)
+void Point::set_coordinates(vector<double>* position)
 {
-	this->coordinates = position;
+	this->coordinates = new vector<double>*();
+
+	for (int i = 0; i < position->size; i++){
+		coordinates[i] = position.at(i);
+	}
 }
 
 Point* Point::add(Point* p1)

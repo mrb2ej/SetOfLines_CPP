@@ -15,6 +15,12 @@ bool Line_unittest::run_all_tests()
 
 bool Line_unittest::creation_test()
 {
+	int dimension = 3;
+	vector<double>* position = new vector<double>();
+	position->push_back(0);
+	position->push_back(93258);
+	position->push_back(1.34);
+	Point* point_a = new Point(dimension, position);
 	return true;
 }
 

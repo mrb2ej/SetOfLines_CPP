@@ -18,6 +18,8 @@ private:
         bool add_point_test();
 	bool copy_constructor_test();
 	bool getter_setter_test();
+	Line* create_line(int dimension);
+	Point* create_point(int dimension);
 
 };
 

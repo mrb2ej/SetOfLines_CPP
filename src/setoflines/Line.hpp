@@ -20,13 +20,13 @@ public:
 	void set_second_point(Point* second_point);
 	int get_num_points();
 	void set_num_points(int num);
+
+	static bool const LEFT = false;   //final?
+	static bool const RIGHT = true;   // final?
 	// compareTo, toString
 
 
 private:	
-	static bool const LEFT = false;   //final?
-	static bool const RIGHT = true;   // final?
-	
 	Point* initial_point;
 	Point* second_point;
 

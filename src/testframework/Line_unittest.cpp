@@ -26,6 +26,25 @@ bool Line_unittest::creation_test()
 
 bool Line_unittest::add_point_test()
 {
+	Line* line;
+	Point* left_point_to_add;
+	Point* right_point_to_add;
+	vector<Point*> points;
+
+	for(int i = 1; i <= 10; i++)
+	{
+		line = create_line(i);
+		left_point_to_add = create_point(i);
+		right_point_to_add = create_point(i);
+
+		line->add_point(left_point_to_add, Line::LEFT);
+		line->add_point(right_point_to_add, Line::RIGHT);
+
+		points = line->get_all_points();
+		if(line->get_num_points() != 4) return false;
+		if(points[0] != left_point_to_add) return false;
+		if(points[3] != right_point_to_add) return false;
+	}
 	return true;
 }
 

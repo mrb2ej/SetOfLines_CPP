@@ -50,6 +50,29 @@ bool Line_unittest::add_point_test()
 
 bool Line_unittest::copy_constructor_test()
 {
+	Line* line;
+	Line* copy;
+	vector<Point*> points;
+	vector<Point*> copy_points;
+	
+	for(int i = 1; i <= 10; i++)
+	{
+		line = create_line(i);
+		for(j = 0; j <= rand() % 100; j++)
+		{
+			line->add_point(create_point(i));
+		}
+		points = line->get_all_points();
+
+		copy = new Line(line);
+		copy_points = copy->get_all_points();
+
+		if(line->get_num_points() != copy->get_num_points()) return false;
+		for(int j = 0; j < line->get_num_points(); j++)
+		{
+			if(points[j] != copy_points[j]) return false;
+		}
+	}
 	return true;
 }
 

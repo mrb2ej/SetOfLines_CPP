@@ -44,6 +44,7 @@ bool Line_unittest::add_point_test()
 		if(line->get_num_points() != 4) return false;
 		if(points[0] != left_point_to_add) return false;
 		if(points[3] != right_point_to_add) return false;
+		delete line;
 	}
 	return true;
 }
@@ -72,6 +73,8 @@ bool Line_unittest::copy_constructor_test()
 		{
 			if(points[j] != copy_points[j]) return false;
 		}
+		delete line;
+		delete copy;
 	}
 	return true;
 }

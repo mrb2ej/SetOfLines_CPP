@@ -1,5 +1,13 @@
 #include "Line_unittest.hpp"
 
+#ifndef MIN_TEST_DIMENSION
+#define MIN_TEST_DIMENSION 1
+#endif
+
+#ifndef MAX_TEST_DIMENSION
+#define MAX_TEST_DIMENSION 10
+#endif
+
 int Line_unittest::main()
 {
 	run_all_tests();
@@ -16,7 +24,7 @@ bool Line_unittest::run_all_tests()
 bool Line_unittest::creation_test()
 {
 	Line* line;
-	for(int i = 1; i <= 10; i++)
+	for(int i = MIN_TEST_DIMENSION; i <= MAX_TEST_DIMENSION; i++)
 	{
 		line = create_line(i);
 		delete line;
@@ -31,7 +39,7 @@ bool Line_unittest::add_point_test()
 	Point* right_point_to_add;
 	vector<Point*> points;
 
-	for(int i = 1; i <= 10; i++)
+	for(int i = MIN_TEST_DIMENSION; i <= MAX_TEST_DIMENSION; i++)
 	{
 		line = create_line(i);
 		left_point_to_add = create_point(i);
@@ -56,7 +64,7 @@ bool Line_unittest::copy_constructor_test()
 	vector<Point*> points;
 	vector<Point*> copy_points;
 	
-	for(int i = 1; i <= 10; i++)
+	for(int i = MIN_TEST_DIMENSION; i <= MAX_TEST_DIMENSION; i++)
 	{
 		line = create_line(i);
 		for(j = 0; j <= rand() % 100; j++)
@@ -81,6 +89,26 @@ bool Line_unittest::copy_constructor_test()
 
 bool Line_unittest::getter_setter_test()
 {
+	Line* line;
+	Point* initial;
+	Point* second;
+	int num_points;
+	
+	for(int i = MIN_TEST_DIMENSION; i <= MAX_TEST_DIMENSION; i++)
+	{
+		line = create_line(i);
+		initial = create_point(i);
+		second = create_point(i);
+		num_points = rand();
+		
+		line->set_initial_point(initial);
+		line->set_second_point(second);
+		line->set_num_points(num_points);
+
+		if(line->get_initial_point() != initial) return false;
+		if(line->get_second_point() != second) return false;
+		if(line->get_num_points() != num_points) return false;
+	}
 	return true;
 }
 

@@ -122,7 +122,11 @@ Point* Line_unittest::create_point(int dimension)
 	vector<double>* coordinates = new vector<double>();
         for(int i = 0; i < dimension; i++)
         {
-                coordinates->push_back(0);
+		int numerator = rand();
+		int denominator = rand();
+		if(denominator == 0) denominator = 1;
+		double coordinate = (double)(numerator / denominator);
+                coordinates->push_back(coordinate);
         }
         return new Point(dimension, coordinates);
 }
